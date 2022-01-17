@@ -40,6 +40,3 @@ class Raton extends DispositivoEntrada {
 
 let raton1 = new Raton("USB", "HP");
 console.log(raton1.toString());
-
-
-wddc
