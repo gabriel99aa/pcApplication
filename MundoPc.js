@@ -90,6 +90,61 @@ class Monitor {
     }
 }
 
+class Computadora {
+
+    static contadorComputadora = 0;
+
+    constructor (nombre, monitor, teclado, raton){
+        this._idComputadora = ++Computadora.contadorComputadora;
+        this._nombre = nombre;
+        this._monitor = monitor;
+        this._teclado = teclado;
+        this._raton = raton;
+    }
+
+    get idComputadora(){
+        return this._idComputadora;
+    }
+
+    get nombre(){
+        return this._nombre;
+    }
+
+    set nombre(nombre){
+        this._nombre = nombre;
+    }
+
+    get monitor(){
+        return this._monitor;
+    }
+
+    set monitor(monitor){
+        this._monitor = monitor;
+    }
+
+    get teclado(){
+        return this._teclado;
+    }
+
+    set teclaco(teclado){
+        return this._teclado = teclado;
+    }
+
+    get raton(){
+        return this._raton;
+    }
+
+    set raton(raton){
+        this._raton = raton;
+    }
+
+    toString(){
+        return `Computadora ${this._idComputadora} : ${this._nombre} ~ \n ${this._monitor} \n ${this._teclado} \n ${this._raton}`;
+    }
+}
+
+
+
 let raton1 = new Raton("USB", "HP");
 console.log(raton1.toString());
 
@@ -98,3 +153,6 @@ console.log(teclado1.toString());
 
 let monitor1 = new Monitor("LG", 29);
 console.log(monitor1.toString());
+
+let computador1 = new Computadora("DELL", monitor1, teclado1, raton1);
+console.log(computador1.toString());
