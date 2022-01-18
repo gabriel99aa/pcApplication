@@ -143,7 +143,33 @@ class Computadora {
     }
 }
 
+class Orden {
 
+    static contadorOrdenes = 0;
+
+    constructor (){
+        this._idOrden = ++Orden.contadorOrdenes;
+        this._computadoras = [];
+    }
+
+    get idOrden(){
+        return this._idOrden;
+    }
+
+    agregarComputadora(computadora){
+        this._computadoras.push(computadora);
+    }
+
+    mostrarOrden (){
+        
+        let ordencomputadora = " ";
+        for (let computador of this._computadoras){
+            ordencomputadora += `\n ${computador}`
+        }
+        console.log(`Orden: ${this.idOrden}, computador: ${ordencomputadora}`);
+    }
+
+}
 
 let raton1 = new Raton("USB", "HP");
 console.log(raton1.toString());
@@ -156,3 +182,7 @@ console.log(monitor1.toString());
 
 let computador1 = new Computadora("DELL", monitor1, teclado1, raton1);
 console.log(computador1.toString());
+
+let orden1 = new Orden();
+orden1.agregarComputadora(computador1);
+orden1.mostrarOrden();
