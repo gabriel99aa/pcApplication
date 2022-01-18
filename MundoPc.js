@@ -55,9 +55,46 @@ class Teclado extends DispositivoEntrada {
     }
 }
 
+class Monitor {
+
+    static contadorMonitor = 0;
+
+    constructor (marca, tamanio){
+        this._marca = marca;
+        this._tamanio = tamanio;
+        this._idMonitor = ++Monitor.contadorMonitor;
+    }
+
+    get idMonitor(){
+        return this._idMonitor;
+    }
+
+    get marca(){
+        return this._marca;
+    }
+
+    set marca (marca){
+        this._marca = marca;
+    }
+
+    get tamanio(){
+        return this._tamanio;
+    }
+
+    set tamanio(tamanio){
+        this._tamanio = tamanio;
+    }
+
+    toString(){
+        return `Monitor: [idMonitor: ${this._idMonitor} ~ marca: ${this._marca} ~ tamanio: ${this._tamanio}]`
+    }
+}
 
 let raton1 = new Raton("USB", "HP");
 console.log(raton1.toString());
 
 let teclado1 = new Teclado("wifi", "HP");
 console.log(teclado1.toString());
+
+let monitor1 = new Monitor("LG", 29);
+console.log(monitor1.toString());
